@@ -16,8 +16,8 @@ def testIsWordGuessed():
             "isWordGuessed should have returned True"
     assert isWordGuessed("apple", ['a', 'p', 'p', 'l', 'e', 'a']) == True,\
             "isWordGuessed should have returned True"
-    assert isWordGuessed("apple", ['a', 'p', 'l', 'e']) == False,\
-            "isWordGuessed should have returned False"
+    assert isWordGuessed("apple", ['a', 'p', 'l', 'e']) == True,\
+            "isWordGuessed should have returned True"
     assert isWordGuessed("apple", ['a', 'p', 'p', 'l', 'e', 'a', 'p', 'p', 'l']) == True,\
             "isWordGuessed should have returned True"
     assert isWordGuessed("apple", ['a', 'p', 'p', 'l', 'a']) == False,\
