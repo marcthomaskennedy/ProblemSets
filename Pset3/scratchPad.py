@@ -29,8 +29,25 @@ def testIsWordGuessed():
             "isWordGuessed should have returned True"
     print("isWordGuessed() - All tests pass!")
 
+#------------------------------------------------------------------------------
+
+def getAvailableLetters(lettersGuessed):
+    return None
+
+
+def testGetAvailableLetters():
+    assert getAvailableLetters(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == "", "It should return an empty string"
+    assert getAvailableLetters(['a']) == "bcdefghijklmnopqrstuvwxyz",\
+            "It should return the string 'bcdefghijklmnopqrstuvwxyz'"
+    assert getAvailableLetters(['z']) == "abcdefghijklmnopqrstuvwxy",\
+            "It should return the string 'abcdefghijklmnopqrstuvwxy'"
+    assert getAvailableLetters(['e', 'i', 'k', 'p', 'r', 's']) == \
+            "abcdfghjlmnoqtuvwxyz", "It should return the string 'abcdfghjlmnoqtuvwxyz'"
+    print("getAvailableLetters() - All tests pass!")
+
 # Main program
-testIsWordGuessed()
+#testIsWordGuessed()
+testGetAvailableLetters()
 #secretWord = "apple"
 #lettersGuessed = ['p', 'e', 'i', 'a', 'k', 'r', 's', 'l']
 #print(isWordGuessed(secretWord, lettersGuessed))
