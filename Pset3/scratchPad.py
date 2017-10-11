@@ -57,7 +57,14 @@ def testGetAvailableLetters():
 #------------------------------------------------------------------------------
 
 def getGuessedWord(secretWord, lettersGuessed):
-    return None
+    guessedLetters = ""
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            guessedLetters += letter
+        else:
+            guessedLetters += "_"
+
+    return guessedLetters
 
 
 def testGetGuessedWord():
