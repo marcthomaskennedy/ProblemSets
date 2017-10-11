@@ -54,9 +54,33 @@ def testGetAvailableLetters():
             "abcdfghjlmnoqtuvwxyz", "It should return the string 'abcdfghjlmnoqtuvwxyz'"
     print("getAvailableLetters() - All tests pass!")
 
+#------------------------------------------------------------------------------
+
+def getGuessedWord(secretWord, lettersGuessed):
+    return None
+
+
+def testGetGuessedWord():
+    assert getGuessedWord("apple", ['f', 'i', 'k', 'j', 'r', 's']) == "_____",\
+            "It should return the strinng '_____'"
+    assert getGuessedWord("apple", ['a', 'i', 'k', 'j', 'r', 's']) == "a____",\
+            "It should return the strinng 'a____'"
+    assert getGuessedWord("apple", ['e', 'i', 'k', 'j', 'r', 's']) == "____e",\
+            "It should return the strinng '____e'"
+    assert getGuessedWord("apple", ['f', 'p', 'k', 'j', 'r', 's']) == "_pp__",\
+            "It should return the strinng '_pp__'"
+    assert getGuessedWord("apple", ['e', 'i', 'k', 'p', 'r', 's']) == "_pp_e",\
+            "It should return the strinng '_pp_e'"
+    assert getGuessedWord("apple", ['e', 'l', 'k', 'p', 'a', 's']) == "apple",\
+            "It should return the strinng 'apple'"
+    print("getGuessedWord() - All tests pass!")
+
+#------------------------------------------------------------------------------
+
 # Main program
 #testIsWordGuessed()
-testGetAvailableLetters()
+#testGetAvailableLetters()
+testGetGuessedWord()
 #secretWord = "apple"
 #lettersGuessed = ['p', 'e', 'i', 'a', 'k', 'r', 's', 'l']
 #print(isWordGuessed(secretWord, lettersGuessed))
