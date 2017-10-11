@@ -32,11 +32,20 @@ def testIsWordGuessed():
 #------------------------------------------------------------------------------
 
 def getAvailableLetters(lettersGuessed):
-    return None
+    characters = "abcdefghijklmnopqrstuvwxyz"
+    availableLetters = ""
+    for character in characters:
+        if character in lettersGuessed:
+            continue
+        else:
+            availableLetters += character
+    return availableLetters
 
 
 def testGetAvailableLetters():
     assert getAvailableLetters(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) == "", "It should return an empty string"
+    assert getAvailableLetters([]) == "abcdefghijklmnopqrstuvwxyz",\
+            "It should return the string 'bcdefghijklmnopqrstuvwxyz'"
     assert getAvailableLetters(['a']) == "bcdefghijklmnopqrstuvwxyz",\
             "It should return the string 'bcdefghijklmnopqrstuvwxyz'"
     assert getAvailableLetters(['z']) == "abcdefghijklmnopqrstuvwxy",\
