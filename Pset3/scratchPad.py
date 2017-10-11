@@ -1,13 +1,12 @@
 def isWordGuessed(secretWord, lettersGuessed):
-    lettersGuessedCopy = lettersGuessed[:]
     isGuessed = ""
-    print(lettersGuessedCopy)
-    for i in range(len(secretWord)):
-        if secretWord[i] in lettersGuessed:
-            isGuessed += lettersGuessedCopy.pop(i)
-            print(lettersGuessedCopy)
-    print("WORD:", secretWord)
-    print("GUESS:", isGuessed)
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            isGuessed += letter
+
+    if secretWord == isGuessed:
+        return True
+    return False
 
 def testIsWordGuessed():
     assert isWordGuessed("apple", ['a', 'p', 'p', 'l', 'e']) == True,\
@@ -26,10 +25,12 @@ def testIsWordGuessed():
             "isWordGuessed should have returned False"
     assert isWordGuessed("apple", ['b', 'c', 'd', 'f', 'g']) == False,\
             "isWordGuessed should have returned False"
+    assert isWordGuessed("apple", ['a', 'p', 'l', 'e', 'g']) == True,\
+            "isWordGuessed should have returned True"
     print("isWordGuessed() - All tests pass!")
 
 # Main program
-#testIsWordGuessed()
-secretWord = "apple"
-lettersGuessed = ['p', 'e', 'i', 'a', 'k', 'r', 's', 'l']
-print(isWordGuessed(secretWord, lettersGuessed))
+testIsWordGuessed()
+#secretWord = "apple"
+#lettersGuessed = ['p', 'e', 'i', 'a', 'k', 'r', 's', 'l']
+#print(isWordGuessed(secretWord, lettersGuessed))
